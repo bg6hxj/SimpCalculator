@@ -18,9 +18,11 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import kotlinx.coroutines.launch
 import top.aobanagi.simpcalculator.ui.theme.primaryDark
@@ -99,6 +101,14 @@ fun CalcHistoryScreen(navController: NavController) {
                         HorizontalDivider(color = if (isSystemInDarkTheme()) secondaryContainerDark else secondaryContainerLight)
                     }
                 }
+                Text(
+                    text = "Copyright © BG6HXJ",
+                    style = MaterialTheme.typography.bodySmall.copy(fontSize = 12.sp),
+                    color = if (isSystemInDarkTheme()) primaryDark.copy(alpha = 0.5f) else primaryLight.copy(alpha = 0.5f),
+                    modifier = Modifier
+                        .align(Alignment.CenterHorizontally)
+                        .padding(top = 16.dp)
+                )
             }
         }
     )
